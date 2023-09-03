@@ -5,14 +5,14 @@ const create = async (event) => {
     try{
     const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-    const { name, email, phone } = JSON.parse(event.body);
+    const { nombres, email, phone } = JSON.parse(event.body);
     const createdAt = new Date().toISOString();
     const id = v4();
 
 
    const newUser = {
         id,
-        name,
+        nombres,
         email,
         phone,
         createdAt,
