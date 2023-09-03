@@ -37,8 +37,22 @@ functions:
     handler: src/read.read
     events:
       - httpApi:
-          path: /read{id}
+          path: /read/{id}
           method: get        
+  update:
+    handler: src/update.update
+    events:
+      - httpApi:
+          path: /update/{id}
+          method: put
+
+  delete:
+    handler: src/delete.deleteTask
+    events:
+      - httpApi:
+          path: /delete/{id}
+          method: delete
+
           
 
 resources:

@@ -1,26 +1,26 @@
 const AWS = require("aws-sdk");
 
-const read= async (event) => {
+const deleteTask = async (event) => {
   const dynamodb = new AWS.DynamoDB.DocumentClient();
-
   const { id } = event.pathParameters;
 
-  const result = await dynamodb
-    .get({
+  await dynamodb
+    .delete({
       TableName: "CrudT",
-      Key: { id },
+      Key: {
+        id,
+      },
     })
     .promise();
 
-  const task = result.Item;
-
   return {
     status: 200,
-    body: task,
+    body: {
+      message: 'Contacto eliminado'
+    }
   };
 };
 
-
 module.exports = {
-  read,
+  deleteTask,
 };
