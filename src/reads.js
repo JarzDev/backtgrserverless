@@ -7,14 +7,20 @@ const reads= async (event) => {
 
   const tasks = result.Items;
 
-  return {
-    status: 200,
-    body: {
-      tasks,
+  const response = {
+    statusCode: 200,
+    headers: {
+        "Access-Control-Allow-Headers" : "Content-Type",
+        "Access-Control-Allow-Origin": "http://localhost:4200",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
     },
-  };
+    body: JSON.stringify(tasks),
 };
+return response;
 
+
+
+};
 
 module.exports = {
   reads,

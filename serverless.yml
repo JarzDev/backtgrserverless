@@ -21,6 +21,7 @@ functions:
       - httpApi:
           path: /hello
           method: get
+          
   create: 
     handler: src/create.create
     events:

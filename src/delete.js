@@ -13,12 +13,18 @@ const deleteTask = async (event) => {
     })
     .promise();
 
-  return {
-    status: 200,
-    body: {
-      message: 'Contacto eliminado'
-    }
-  };
+const response = {
+    statusCode: 200,
+    headers: {
+        "Access-Control-Allow-Headers" : "Content-Type",
+        "Access-Control-Allow-Origin": "http://localhost:4200",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+    },
+    body: JSON.stringify('Contacto eliminado'),
+};
+return response;
+
+
 };
 
 module.exports = {

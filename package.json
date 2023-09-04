@@ -3,6 +3,7 @@
     "@middy/core": "^4.6.1",
     "@middy/http-json-body-parser": "^4.6.1",
     "aws-sdk": "^2.1450.0",
+    "cors": "^2.8.5",
     "uuid": "^9.0.0"
   }
 }
