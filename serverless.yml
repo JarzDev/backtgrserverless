@@ -31,9 +31,11 @@ functions:
   reads:
     handler: src/reads.reads
     events:
-      - httpApi:
+    - httpApi:
           path: /reads
           method: get
+        
+
   read:
     handler: src/read.read
     events:
