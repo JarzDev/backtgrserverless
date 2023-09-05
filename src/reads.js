@@ -8,10 +8,10 @@ const reads= async (event) => {
   const tasks = result.Items;
 
   const response = {
-    statusCode: 200,
+    status: 200,
     headers: {
         "Access-Control-Allow-Headers" : "Content-Type",
-        "Access-Control-Allow-Origin": "http://localhost:4200",
+        "Access-Control-Allow-Origin": "http://localhost:4200/",
         "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
     },
     body: JSON.stringify(tasks),
